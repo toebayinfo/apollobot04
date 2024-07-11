@@ -38,7 +38,7 @@ class IngramAPI:
 
     async def fetch_products(self, keywords):
         await self.ensure_access_token()
-        url = 'https://api.ingrammicro.com:443/resellers/v6/catalog'
+        url = 'https://api.ingrammicro.com:443/sandbox/resellers/v6/catalog'
         headers = {
             'Authorization': f'Bearer {self.access_token}',
             'IM-CustomerNumber': CONFIG.INGRAM_CUSTOMER_NUMBER,
@@ -76,7 +76,7 @@ class IngramAPI:
 
     async def fetch_price_and_availability(self, ingram_part_number):
         await self.ensure_access_token()
-        url = (f'https://api.ingrammicro.com:443/resellers/v6/catalog/priceandavailability'
+        url = (f'https://api.ingrammicro.com:443/sandbox/resellers/v6/catalog/priceandavailability'
                f'?includePricing=true&includeAvailability=true&includeProductAttributes=true')
 
         headers = {
